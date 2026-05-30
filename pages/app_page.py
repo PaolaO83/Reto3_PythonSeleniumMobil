@@ -7,6 +7,9 @@ class AppPage(BasePage):
 
     _SEARCH = (AppiumBy.ACCESSIBILITY_ID, "Search")
     _FRAGMENT = (AppiumBy.ACCESSIBILITY_ID, "Fragment")
+    _SERVICE = (AppiumBy.ACCESSIBILITY_ID, "Service")
+    _ACTIVITY = (AppiumBy.ACCESSIBILITY_ID, "Activity")
+    
 
     def is_displayed(self) -> bool:
         """Verifica que la pantalla App está visible."""
@@ -23,3 +26,17 @@ class AppPage(BasePage):
         from pages.fragment_page import FragmentPage
         self.wait_and_click(self._FRAGMENT)
         return FragmentPage(self.driver)
+    
+    def go_to_service(self):
+        """Navega al submenú Service y retorna ServicePage."""
+        from pages.services_page import ServicePage
+        self.wait_and_click(self._SERVICE)
+        return ServicePage(self.driver)
+    
+    def go_to_activity(self):
+        """Navega a la opción Activity."""
+        from pages.activity_page import ActivityPage
+        self.wait_and_click(self._ACTIVITY)
+        return ActivityPage(self.driver)
+    
+    

@@ -19,6 +19,8 @@ resource-id: io.appium.android.apis:id/mi_elemento
 content-desc: Mi Elemento
 ```
 
+
+
 ---
 
 ## Paso 1 — Decide si necesitas un Page Object nuevo
@@ -187,7 +189,7 @@ def test_mi_nuevo_caso_sl(driver_saucelabs):
 venv\Scripts\activate
 
 # Ejecuta solo el nuevo test en local
-pytest test/test_appiumdemo.py::test_mi_nuevo_caso -v --alluredir=allure-results
+pytest test/test_appiumdemo_saucelabs.py::test_scenario_select_checks_isolated_service -v --alluredir=allure-results
 
 # Ver el reporte
 allure serve allure-results

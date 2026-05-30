@@ -7,7 +7,7 @@ Ejecutar:
 """
 import allure
 import pytest
-from scenarios import scenario_invoke_search_and_back_home, scenario_select_checks_and_back
+from scenarios import scenario_invoke_search_and_back_home, scenario_select_checks_and_back, scenario_select_checks_isolated_service,scenario_select_checks_intent_activity
 
 pytestmark = pytest.mark.local
 
@@ -24,3 +24,17 @@ def test_invoke_search_and_back_home(driver):
 @allure.tag("local")
 def test_select_checks_and_back(driver):
     scenario_select_checks_and_back(driver)
+
+@allure.feature("AppiumDemos - Service")
+@allure.story("Seleccionar checkbox2 y boton2 en Service")
+@allure.tag("saucelabs")
+def test_scenario_select_checks_isolated_service(driver):
+    scenario_select_checks_isolated_service(driver)
+
+@allure.feature("AppiumDemos - Activity")
+@allure.story("Seleccionar Intent Activity en Activity")
+@allure.tag("saucelabs")
+def test_scenario_select_checks_intent_activity(driver):
+    scenario_select_checks_intent_activity(driver)
+
+

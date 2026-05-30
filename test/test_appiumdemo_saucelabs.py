@@ -9,7 +9,7 @@ Ejecutar:
 """
 import allure
 import pytest
-from scenarios import scenario_invoke_search_and_back_home, scenario_select_checks_and_back
+from scenarios import scenario_invoke_search_and_back_home, scenario_select_checks_and_back, scenario_select_checks_isolated_service
 
 pytestmark = pytest.mark.saucelabs
 
@@ -26,3 +26,9 @@ def test_invoke_search_and_back_home_sl(driver_saucelabs):
 @allure.tag("saucelabs")
 def test_select_checks_and_back_sl(driver_saucelabs):
     scenario_select_checks_and_back(driver_saucelabs)
+
+@allure.feature("AppiumDemos - Service")
+@allure.story("Seleccionar checkbox2 y boton2 en Service")
+@allure.tag("saucelabs")
+def test_scenario_select_checks_isolated_service(driver_saucelabs):
+    scenario_select_checks_isolated_service(driver_saucelabs)
